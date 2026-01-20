@@ -15,16 +15,6 @@ const dbConfig = {
     queueLimit: 0,
 };
 
-// initialize Express app
-const app = express();
-// helps app to read JSON
-app.use(express.json());
-
-// start server
-app.listen(port, () => {
-    console.log('Server running on port', port);
-});
-
 const cors = require("cors");
 const allowedOrigins = [
     "https://onlinecardappwebservice-v0t8.onrender.com",
@@ -46,6 +36,16 @@ app.use(
         credentials: false,
     })
 );
+
+// initialize Express app
+const app = express();
+// helps app to read JSON
+app.use(express.json());
+
+// start server
+app.listen(port, () => {
+    console.log('Server running on port', port);
+});
 
 
 // Example Route: Get all cards
