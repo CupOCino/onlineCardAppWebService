@@ -15,12 +15,23 @@ const dbConfig = {
     queueLimit: 0,
 };
 
+// initialize Express app
+const app = express();
+// helps app to read JSON
+app.use(express.json());
+
+// start server
+app.listen(port, () => {
+    console.log('Server running on port', port);
+});
+
 const cors = require("cors");
 const allowedOrigins = [
     "http://localhost:3000",
     // "https://YOUR-frontend.vercel.app", // add later
     // "https://YOUR-frontend.onrender.com" // add later
 ];
+
 app.use(
     cors({
         origin: function (origin, callback) {
@@ -36,16 +47,6 @@ app.use(
         credentials: false,
     })
 );
-
-// initialize Express app
-const app = express();
-// helps app to read JSON
-app.use(express.json());
-
-// start server
-app.listen(port, () => {
-    console.log('Server running on port', port);
-});
 
 
 // Example Route: Get all cards
