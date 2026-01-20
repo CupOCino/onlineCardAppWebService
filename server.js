@@ -20,11 +20,6 @@ const app = express();
 // helps app to read JSON
 app.use(express.json());
 
-// start server
-app.listen(port, () => {
-    console.log('Server running on port', port);
-});
-
 const cors = require("cors");
 const allowedOrigins = [
     "http://localhost:3000",
@@ -47,6 +42,11 @@ app.use(
         credentials: false,
     })
 );
+
+// start server
+app.listen(port, () => {
+    console.log('Server running on port', port);
+});
 
 
 // Example Route: Get all cards
