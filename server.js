@@ -17,7 +17,7 @@ const dbConfig = {
 
 const cors = require("cors");
 const allowedOrigins = [
-    "https://onlinecardappwebservice-v0t8.onrender.com",
+    "http://localhost:3000",
     // "https://YOUR-frontend.vercel.app", // add later
     // "https://YOUR-frontend.onrender.com" // add later
 ];
